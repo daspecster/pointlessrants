@@ -5,7 +5,8 @@ rdiscount:
   extensions: [smart]
 
 name: Tom Schultz
-url: http://daspecster.github.io/pointlessrants/
+url: http://daspecster.github.io
+baseurl: /pointlessrants
 description: Technobable!
 twitter: daspecster
 github: daspecster
