@@ -18,11 +18,13 @@ What makes Gelocation so useful is how much the web is used on phone these days.
 
 So here's a quick intro on how to use the HTML5 Geolocation API.
 
-<code>if (navigator.geolocation) {
+{% highlight javascript %}
+if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(success, error);
 } else {
   error('not supported');
-}</code>
+}
+{% endhighlight %}
 "success" and "error" in the getCurrentPosition() call are callback functions.
 
 Here's an example of the success() function.
