@@ -20,8 +20,9 @@ So I made a list of a few things that I currently enjoy or I'm looking to purcha
 <h3>CM Storm QuickFire Rapid - Mechanical Gaming Keyboard with Blue CHERRY MX Switches</h3>
 <p>I got this a few months ago and I will never go back. This has increased my typing accuracy and made typing just more fun! *click* *click* *click*!</p>
 &nbsp;
+{{{
 <iframe src="http://rcm.amazon.com/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=pointrants-20&o=1&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B0068INSUM" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-
+}}}
 &nbsp;
 <h3>FiiO E7 USB DAC and Portable Headphone Amplifier</h3>
 <p>This is something that people at work actually turned me on to. I never thought it would make that big of a difference. I can actually hear each piece of the drum kit in my songs now. This is a great starter for future audiophiles out there.</p>
