@@ -20,21 +20,24 @@ So here's a quick intro on how to use the HTML5 Geolocation API.
 
 {% highlight javascript %}
 if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success, error);
+  navigator.geolocation.getCurrentPosition(success, error);
 } else {
-  error('not supported');
+  error('not supported');
 }
 {% endhighlight %}
+
 "success" and "error" in the getCurrentPosition() call are callback functions.
 
 Here's an example of the success() function.
-<code>function success(position) {
+{% highlight javascript %}
+function success(position) {
    document.write("Latitude: " + position.coords.latitude + " Longitude: " +     position.coords.longitude);
-}</code>
+}
+{% endhighlight %}
 
 
 Here's the full example.
-<code>
+{% highlight javascript %}
 function success(position) {
     document.write("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
 }
@@ -49,4 +52,4 @@ if (navigator.geolocation) {
 } else {
     error('not supported');
 }
-</code>
+{% endhighlight %}
