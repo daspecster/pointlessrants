@@ -9,7 +9,7 @@ tags:
   - html5
   - javascript
   - tutorial
-
+comments: true
 ---
 
 Geolocation is a very useful tool. So useful in fact that it's been added to the HTML5 specification.
