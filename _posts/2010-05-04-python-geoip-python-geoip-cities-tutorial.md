@@ -55,7 +55,7 @@ There is a shell script available to update the city database for you in the pyt
 
 {% highlight %}/usr/share/doc/libgeoip1/examples/geolitecityupdate.sh{% endhighlight %}
 
-{% highlight shell %}
+{% highlight bash %}
 #!/bin/shGUNZIP="/bin/gunzip"
 MAXMINDURL="http://geolite.maxmind.com/download/geoip/database/"
 WGET="/usr/bin/wget -q -O -"
@@ -102,7 +102,7 @@ Depending on what you downloaded.
 Creating a new instance of GeoIP with the path to the alternate database will give you access to all sorts of awesome information!
 <h2>Ok, now all the code...</h2>
 Find by IP address:
-{% highlight python %}
+{% highlight Python %}
 gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
 print gi.record_by_addr("74.125.95.105")
 {
@@ -122,7 +122,7 @@ print gi.record_by_addr("74.125.95.105")
 }
 {% endhighlight %}
 Find by name:
-{% highlight python %}
+{% highlight Python %}
 gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
 print gi.record_by_name("www.google.com")
 {
@@ -142,7 +142,7 @@ print gi.record_by_name("www.google.com")
 }
 {% endhighlight %}
 Find PointlessRants!
-{% highlight python %}
+{% highlight Python %}
 gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
 print gi.record_by_name("www.pointlessrants.com")
 {
