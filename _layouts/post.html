@@ -13,8 +13,15 @@ comments: true
   </section>
 
   {{ content }}
-  
-  <section class="comments">
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/{{ site.twitter }}" target="_blank">
+        <img src="{{ site.gravatar_url }}?s=142" height="50" width="50" />
+      </a>
+
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -29,15 +36,8 @@ comments: true
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  </section>
+  
 
-  <!-- TODO: bio here -->
-  <section class="meta">
-    <h3>Discussion, links, and tweets</h3>
-    <section class="copy">
-      <a href="https://twitter.com/{{ site.twitter }}" target="_blank">
-        <img src="{{ site.gravatar_url }}?s=142" height="50" width="50" />
-      </a>
 
       <p>
         I'm a Software Engineer at Quicken Loans in Detroit, Michigan. <a href="https://twitter.com/{{ site.twitter }}" target="_blank">Follow me on Twitter</a>. 
