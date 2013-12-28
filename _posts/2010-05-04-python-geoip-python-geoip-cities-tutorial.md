@@ -34,25 +34,29 @@ Then you can install python-geoip with
 Or you can get the source from <a title="MaxMind GeoIP python" href="http://geolite.maxmind.com/download/geoip/api/python/">http://geolite.maxmind.com/download/geoip/api/python/</a>
 
 Now that you have this installed you can  test it with the following code put in the python terminal.
-<pre>&gt;&gt;&gt; import GeoIP
-&gt;&gt;&gt; gi = GeoIP.new(GeoIP.GEOIP_MEMORY_CACHE)
-&gt;&gt;&gt; print gi.country_code_by_addr("203.195.93.0")</pre>
+
+{% highlight python %}
+import GeoIP
+gi = GeoIP.new(GeoIP.GEOIP_MEMORY_CACHE)
+print gi.country_code_by_addr("203.195.93.0")
+{% endhighlight %}
+
 I got that from MaxMind's tutorial <a title="MaxMind GeoIP tutorial" href="http://www.maxmind.com/app/python"><em>http://www.maxmind.com/app/python.</em></a><em> </em>At this point you have the ability to track IPs down to the country level. What you probably really want is to go down to the city level.
 <h2><span style="font-size: medium;">Geolocation - Cities</span></h2>
 If you call some of the other functions on the GeoIP class like record_by_addr() you'lld get an error like this
 
 <em>"Invalid database type GeoIP Country Edition, expected GeoIP City Edition, Rev 1"</em>
 
-<em><!--more-->
-</em>
-
 This is telling us that we don't have the database for the city level information. You can get that for FREE from MaxMind!
 
 <a title="GeoIP City database MaxMind" href="http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"><em>http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz</em></a>
 
 There is a shell script available to update the city database for you in the python-geopip package (Don't forget to "chmod +x" on it!).
-<pre>/usr/share/doc/libgeoip1/examples/geolitecityupdate.sh</pre>
-<pre>#!/bin/shGUNZIP="/bin/gunzip"
+
+{% highlight %}/usr/share/doc/libgeoip1/examples/geolitecityupdate.sh{% endhighlight %}
+
+{% highlight shell %}
+#!/bin/shGUNZIP="/bin/gunzip"
 MAXMINDURL="http://geolite.maxmind.com/download/geoip/database/"
 WGET="/usr/bin/wget -q -O -"
 TMPDIR=$(mktemp -d)
@@ -74,7 +78,9 @@ if [ $? != 0 ] ; then
 echo "Can't move databases file to ${DATADIR}/"
 exit 1
 fi
-exit 0</pre>
+exit 0
+{% endhighlight %}
+
 What this script does is..
 <ol>
 	<li>Download the database (<a title="GeoIP Databases" href="http://geolite.maxmind.com/download/geoip/database/">http://geolite.maxmind.com/download/geoip/database/</a>)</li>
@@ -87,17 +93,18 @@ Then there is the magic piece of code that isn't really documented anywhere...
 
 Except here in ubuntu, along with many other examples(hence the folder name "examples").
 
-<em>/usr/share/doc/python-geoip/examples</em>
-<pre>gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)</pre>
+{% highlight %}file: /usr/share/doc/python-geoip/examples{% endhighlight %}
+{% highlight python %}gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD){% endhighlight %}
 or...
-<pre>gi = GeoIP.open("/usr/share/GeoIP/GeoIPLiteCity.dat",GeoIP.GEOIP_STANDARD)</pre>
+{% highlight python %}gi = GeoIP.open("/usr/share/GeoIP/GeoIPLiteCity.dat",GeoIP.GEOIP_STANDARD){% endhighlight %}
 Depending on what you downloaded.
 
 Creating a new instance of GeoIP with the path to the alternate database will give you access to all sorts of awesome information!
 <h2>Ok, now all the code...</h2>
 Find by IP address:
-<pre>&gt;&gt;&gt; gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
-&gt;&gt;&gt; print gi.record_by_addr("74.125.95.105")
+{% highlight python %}
+gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
+print gi.record_by_addr("74.125.95.105")
 {
     'city': 'Mountain View',
     'region_name': 'California',
@@ -112,10 +119,12 @@ Find by IP address:
     'dma_code': 807,
     'country_code': 'US',
     'country_name': 'United States'
-}</pre>
+}
+{% endhighlight %}
 Find by name:
-<pre>&gt;&gt;&gt; gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
-&gt;&gt;&gt; print gi.record_by_name("www.google.com")
+{% highlight python %}
+gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
+print gi.record_by_name("www.google.com")
 {
     'city': 'Mountain View',
     'region_name': 'California',
@@ -130,10 +139,12 @@ Find by name:
     'dma_code': 807,
     'country_code': 'US',
     'country_name': 'United States'
-}</pre>
+}
+{% endhighlight %}
 Find PointlessRants!
-<pre>&gt;&gt;&gt; gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
-&gt;&gt;&gt; print gi.record_by_name("www.pointlessrants.com")
+{% highlight python %}
+gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
+print gi.record_by_name("www.pointlessrants.com")
 {
     'city': 'Brea',
     'region_name': 'California',
@@ -148,4 +159,5 @@ Find PointlessRants!
     'dma_code': 803,
     'country_code': 'US',
     'country_name': 'United States'
-}</pre>
+}
+{% endhighlight %}
