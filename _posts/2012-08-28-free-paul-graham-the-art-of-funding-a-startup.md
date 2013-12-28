@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ' '
+title: 'Paul Graham - The art of funding a startup'
 tags:
   - essays
   - free
