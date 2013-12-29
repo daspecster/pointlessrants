@@ -27,11 +27,12 @@ a {
     margin: 10px 0 20px 0; }
     .sidebar .name #fname {
       padding-left: 1px;
-      font-size: 23px;
+      font-size: 48px;
       letter-spacing: 5px;
       color: black; }
     .sidebar .name #lname {
-      font-size: 17px;
+      font-size: 32px;
+      padding: 16px;
       font-weight: bold;
       letter-spacing: 1px;
       color: black; }
