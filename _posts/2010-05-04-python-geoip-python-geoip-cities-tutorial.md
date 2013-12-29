@@ -101,6 +101,7 @@ file: /usr/share/doc/python-geoip/examples
 gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
 ```
 or...
+
 ```python
 gi = GeoIP.open("/usr/share/GeoIP/GeoIPLiteCity.dat",GeoIP.GEOIP_STANDARD)
 ```
@@ -109,6 +110,7 @@ Depending on what you downloaded.
 Creating a new instance of GeoIP with the path to the alternate database will give you access to all sorts of awesome information!
 <h2>Ok, now all the code...</h2>
 Find by IP address:
+
 ```python
 gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
 print gi.record_by_addr("74.125.95.105")
@@ -129,6 +131,7 @@ print gi.record_by_addr("74.125.95.105")
 }
 ```
 Find by name:
+
 ```python
 gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
 print gi.record_by_name("www.google.com")
