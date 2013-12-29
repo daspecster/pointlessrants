@@ -35,11 +35,11 @@ Or you can get the source from <a title="MaxMind GeoIP python" href="http://geol
 
 Now that you have this installed you can  test it with the following code put in the python terminal.
 
-{% highlight python %}
+```python
 import GeoIP
 gi = GeoIP.new(GeoIP.GEOIP_MEMORY_CACHE)
 print gi.country_code_by_addr("203.195.93.0")
-{% endhighlight %}
+```
 
 I got that from MaxMind's tutorial <a title="MaxMind GeoIP tutorial" href="http://www.maxmind.com/app/python"><em>http://www.maxmind.com/app/python.</em></a><em> </em>At this point you have the ability to track IPs down to the country level. What you probably really want is to go down to the city level.
 <h2><span style="font-size: medium;">Geolocation - Cities</span></h2>
@@ -53,9 +53,10 @@ This is telling us that we don't have the database for the city level informatio
 
 There is a shell script available to update the city database for you in the python-geopip package (Don't forget to "chmod +x" on it!).
 
-{% highlight %}/usr/share/doc/libgeoip1/examples/geolitecityupdate.sh{% endhighlight %}
+file: /usr/share/doc/libgeoip1/examples/geolitecityupdate.sh
 
-{% highlight bash %}
+
+```bash
 #!/bin/shGUNZIP="/bin/gunzip"
 MAXMINDURL="http://geolite.maxmind.com/download/geoip/database/"
 WGET="/usr/bin/wget -q -O -"
@@ -79,7 +80,7 @@ echo "Can't move databases file to ${DATADIR}/"
 exit 1
 fi
 exit 0
-{% endhighlight %}
+```
 
 What this script does is..
 <ol>
@@ -93,16 +94,22 @@ Then there is the magic piece of code that isn't really documented anywhere...
 
 Except here in ubuntu, along with many other examples(hence the folder name "examples").
 
-{% highlight %}file: /usr/share/doc/python-geoip/examples{% endhighlight %}
-{% highlight python %}gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD){% endhighlight %}
+
+file: /usr/share/doc/python-geoip/examples
+
+```python
+gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
+```
 or...
-{% highlight python %}gi = GeoIP.open("/usr/share/GeoIP/GeoIPLiteCity.dat",GeoIP.GEOIP_STANDARD){% endhighlight %}
+```python
+gi = GeoIP.open("/usr/share/GeoIP/GeoIPLiteCity.dat",GeoIP.GEOIP_STANDARD)
+```
 Depending on what you downloaded.
 
 Creating a new instance of GeoIP with the path to the alternate database will give you access to all sorts of awesome information!
 <h2>Ok, now all the code...</h2>
 Find by IP address:
-{% highlight python %}
+```python
 gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
 print gi.record_by_addr("74.125.95.105")
 {
@@ -120,9 +127,9 @@ print gi.record_by_addr("74.125.95.105")
     'country_code': 'US',
     'country_name': 'United States'
 }
-{% endhighlight %}
+```
 Find by name:
-{% highlight python %}
+```python
 gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
 print gi.record_by_name("www.google.com")
 {
@@ -140,9 +147,11 @@ print gi.record_by_name("www.google.com")
     'country_code': 'US',
     'country_name': 'United States'
 }
-{% endhighlight %}
+```
+
 Find PointlessRants!
-{% highlight python %}
+
+```python
 gi = GeoIP.open("/usr/share/GeoIP/GeoIPCity.dat",GeoIP.GEOIP_STANDARD)
 print gi.record_by_name("www.pointlessrants.com")
 {
@@ -160,4 +169,4 @@ print gi.record_by_name("www.pointlessrants.com")
     'country_code': 'US',
     'country_name': 'United States'
 }
-{% endhighlight %}
+```
