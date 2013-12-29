@@ -205,3 +205,40 @@ a {
     font-weight: bold; }
   .content .talk-design .color .white {
     color: #fff; }
+
+@media only screen and (max-device-width: 480px), only screen and (device-width: 768px) {
+  .sidebar {
+  position: inherit;
+  width: inherit;
+  margin: 0;
+  padding: 25px; }
+  .sidebar img {
+    display: none; }
+  .sidebar .name {
+    display: inline; }
+    .sidebar .name #fname, .sidebar .name #lname {
+      font-size: 25px; padding: 23px;}
+  .sidebar .meta {
+    display: none; }
+  .sidebar ul {
+    padding: 25px; }
+  .sidebar li {
+    display: inline; }
+  .sidebar .sections {
+    margin: 0; }
+    .sidebar .sections a {
+      font-size: 16px;
+      margin: 0 20px 0 0;
+      padding: 5px 10px; }
+
+.sections {
+  display: none;
+}
+
+.content {
+  margin: 0;
+  padding: 5px 25px;
+  width: inherit; }
+  .content h1 {
+    margin: 0 0 5px 0; }
+}
