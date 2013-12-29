@@ -20,7 +20,7 @@ layout: layout
       <a href="https://twitter.com/{{ site.twitter }}" target="_blank">
         <img src="{{ site.gravatar_url }}?s=142" height="50" width="50" />
       </a>
-      
+
        <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -47,3 +47,7 @@ layout: layout
     </section>
   </section>
 </section>
+
+<script type="text/javascript">
+  mixpanel.track("post viewed", {title: {{ page.title }}, url: {{ page.url }} });
+</script>
