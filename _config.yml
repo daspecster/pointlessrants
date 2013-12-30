@@ -4,7 +4,7 @@ permalink: /posts/:title
 rdiscount:
   extensions: [smart]
 
-name: PointlessRants.com
+name: Tom Schultz
 url: http://pointlessrants.com
 baseurl: ''
 description: Technobable!
