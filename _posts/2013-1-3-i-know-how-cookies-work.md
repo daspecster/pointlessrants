@@ -1,6 +1,13 @@
 ---
+layout: post
 title: I know how cookies work...
 date: 2013-01-03
+tags: 
+  - Internet
+  - ICO
+  - Browsers
+  - Extensions
+  - Rant
 ---
 
 I know how cookies work
